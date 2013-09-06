@@ -1,0 +1,64 @@
+Source: python-jsonpath-rw
+Section: python
+Priority: optional
+Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders: Julien Danjou <acid@debian.org>,
+           Thomas Goirand <zigo@debian.org>,
+           Mehdi Abaakouk <sileht@sileht.net>
+Build-Depends: debhelper (>= 9),
+               openstack-pkg-tools,
+               python-all (>= 2.6.6-3~),
+               python-nose,
+               python-ply,
+               python-setuptools,
+               python3-all,
+               python3-ply,
+               python3-setuptools
+Standards-Version: 3.9.4
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jsonpath-rw.git
+Vcs-Git: git://anonscm.debian.org/openstack/python-jsonpath-rw.git
+Homepage: https://github.com/kennknowles/python-jsonpath-rw
+
+Package: python-jsonpath-rw
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python:Depends}
+Recommends: ${python:Recommends}
+Description: extended implementation of JSONPath for Python 2.x
+ This library provides a robust and significantly extended implementation of
+ JSONPath for Python. It is tested with Python 2.6, 2.7, 3.2, and 3.3.
+ .
+ This library differs from other JSONPath implementations in that it is a full
+ language implementation, meaning the JSONPath expressions are first class
+ objects, easy to analyze, transform, parse, print, and extend.
+ .
+ The JSONPath syntax supported by this library includes some additional
+ features and omits some problematic features (those that make it unportable).
+ In particular, some new operators such as "|" and "where" are available, and
+ parentheses are used for grouping not for callbacks into Python, since with
+ these changes the language is not trivially associative. Also, fields may be
+ quoted whether or not they are contained in brackets.
+ .
+ This package provides the Python 2.x module.
+
+Package: python3-jsonpath-rw
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python3:Depends}
+Recommends: ${python3:Recommends}
+Description: extended implementation of JSONPath for Python 3.x
+ This library provides a robust and significantly extended implementation of
+ JSONPath for Python. It is tested with Python 2.6, 2.7, 3.2, and 3.3.
+ .
+ This library differs from other JSONPath implementations in that it is a full
+ language implementation, meaning the JSONPath expressions are first class
+ objects, easy to analyze, transform, parse, print, and extend.
+ .
+ The JSONPath syntax supported by this library includes some additional
+ features and omits some problematic features (those that make it unportable).
+ In particular, some new operators such as "|" and "where" are available, and
+ parentheses are used for grouping not for callbacks into Python, since with
+ these changes the language is not trivially associative. Also, fields may be
+ quoted whether or not they are contained in brackets.
+ .
+ This package provides the Python 3.x module.
