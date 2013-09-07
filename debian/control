@@ -11,9 +11,11 @@ Build-Depends: debhelper (>= 9),
                python-nose,
                python-ply,
                python-setuptools,
+               python-six,
                python3-all,
                python3-ply,
-               python3-setuptools
+               python3-setuptools,
+               python3-six
 Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jsonpath-rw.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-jsonpath-rw.git
@@ -22,7 +24,7 @@ Homepage: https://github.com/kennknowles/python-jsonpath-rw
 Package: python-jsonpath-rw
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: python-six, ${misc:Depends}, ${python:Depends}
 Recommends: ${python:Recommends}
 Description: extended implementation of JSONPath for Python 2.x
  This library provides a robust and significantly extended implementation of
@@ -44,7 +46,7 @@ Description: extended implementation of JSONPath for Python 2.x
 Package: python3-jsonpath-rw
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends}, ${python3:Depends}
+Depends: python3-six, ${misc:Depends}, ${python3:Depends}
 Recommends: ${python3:Recommends}
 Description: extended implementation of JSONPath for Python 3.x
  This library provides a robust and significantly extended implementation of
