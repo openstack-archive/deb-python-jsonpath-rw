@@ -2,20 +2,20 @@ Source: python-jsonpath-rw
 Section: python
 Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
-Uploaders: Julien Danjou <acid@debian.org>,
-           Thomas Goirand <zigo@debian.org>,
-           Mehdi Abaakouk <sileht@sileht.net>
+Uploaders: Thomas Goirand <zigo@debian.org>,
 Build-Depends: debhelper (>= 9),
                openstack-pkg-tools,
-               python-all (>= 2.6.6-3~),
+               python-all,
                python-nose,
-               python-ply,
                python-setuptools,
-               python-six,
                python3-all,
-               python3-ply,
                python3-setuptools,
-               python3-six
+Build-Depends-Indep: python-decorator,
+                     python-ply,
+                     python-six,
+                     python3-decorator,
+                     python3-ply,
+                     python3-six,
 Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jsonpath-rw.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-jsonpath-rw.git
@@ -23,9 +23,12 @@ Homepage: https://github.com/kennknowles/python-jsonpath-rw
 
 Package: python-jsonpath-rw
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python-six, ${misc:Depends}, ${python:Depends}
-Recommends: ${python:Recommends}
+Depends: python-decorator,
+         python-ply,
+         python-six,
+         ${misc:Depends},
+         ${python:Depends},
+Recommends: ${python:Recommends},
 Description: extended implementation of JSONPath for Python 2.x
  This library provides a robust and significantly extended implementation of
  JSONPath for Python. It is tested with Python 2.6, 2.7, 3.2, and 3.3.
@@ -45,9 +48,12 @@ Description: extended implementation of JSONPath for Python 2.x
 
 Package: python3-jsonpath-rw
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python3-six, ${misc:Depends}, ${python3:Depends}
-Recommends: ${python3:Recommends}
+Depends: python3-decorator,
+         python3-ply,
+         python3-six,
+         ${misc:Depends},
+         ${python3:Depends},
+Recommends: ${python3:Recommends},
 Description: extended implementation of JSONPath for Python 3.x
  This library provides a robust and significantly extended implementation of
  JSONPath for Python. It is tested with Python 2.6, 2.7, 3.2, and 3.3.
