@@ -272,7 +272,7 @@ class Where(JSONPath):
         self.right = right
 
     def find(self, data):
-        return [subdata for subdata in self.left.find(data) if self.right.find(data)]
+        return [subdata for subdata in self.left.find(data) if self.right.find(subdata)]
 
     def __str__(self):
         return '%s where %s' % (self.left, self.right)
@@ -416,7 +416,7 @@ class Fields(JSONPath):
                  if field_datum is not None]
 
     def __str__(self):
-        return ','.join(self.fields)
+        return ','.join(map(str, self.fields))
 
     def __repr__(self):
         return '%s(%s)' % (self.__class__.__name__, ','.join(map(repr, self.fields)))

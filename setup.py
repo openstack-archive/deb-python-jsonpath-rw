@@ -4,29 +4,19 @@ import sys
 import os.path
 import subprocess
 
-
-# Build README.txt from README.md if not present, and if we are actually building for distribution to pypi
-if not os.path.exists('README.txt') and 'sdist' in sys.argv:
-    subprocess.call(['pandoc', '--to=rst', '--output=README.txt', 'README.md'])
-
-# But use the best README around; never fail - there are some Windows locales that seem to die on smartquotes,
-# even with the explicit encoding
-try:
-    readme = 'README.txt' if os.path.exists('README.txt') else 'README.md'
-    long_description = io.open(readme, encoding='utf-8').read()
-except:
-    long_description = 'Could not read README.txt'
-
 setuptools.setup(
     name='jsonpath-rw',
-    version='1.2.0',
+    version='1.4.0',
     description='A robust and significantly extended implementation of JSONPath for Python, with a clear AST for metaprogramming.',
     author='Kenneth Knowles',
     author_email='kenn.knowles@gmail.com',
     url='https://github.com/kennknowles/python-jsonpath-rw',
     license='Apache 2.0',
-    long_description=long_description,
-    packages = ['jsonpath_rw'],
+    long_description=io.open('README.rst', encoding='utf-8').read(),
+    packages = ['jsonpath_rw', 'jsonpath_rw.bin'],
+    entry_points = {
+        'console_scripts':  ['jsonpath.py = jsonpath_rw.bin.jsonpath:entry_point'],
+    },
     test_suite = 'tests',
     install_requires = [ 'ply', 'decorator', 'six' ],
     classifiers = [
