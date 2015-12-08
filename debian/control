@@ -16,7 +16,7 @@ Build-Depends-Indep: python-decorator,
                      python3-decorator,
                      python3-ply,
                      python3-six,
-Standards-Version: 3.9.4
+Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jsonpath-rw.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-jsonpath-rw.git
 Homepage: https://github.com/kennknowles/python-jsonpath-rw

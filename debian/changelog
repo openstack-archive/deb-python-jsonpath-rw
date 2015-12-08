@@ -5,6 +5,7 @@ python-jsonpath-rw (1.4.0-1) unstable; urgency=medium
   * Using -v flag when running nose.
   * Fixed (build-)depends.
   * Now using update-alternatives for /usr/bin/jsonpath.
+  * Standards-Version is now 3.9.6 (no change).
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 08 Dec 2015 11:13:01 +0000
 
