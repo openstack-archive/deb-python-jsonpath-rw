@@ -4,6 +4,7 @@ python-jsonpath-rw (1.4.0-1) unstable; urgency=medium
   * Fixed watch file.
   * Using -v flag when running nose.
   * Fixed (build-)depends.
+  * Now using update-alternatives for /usr/bin/jsonpath.
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 08 Dec 2015 11:13:01 +0000
 

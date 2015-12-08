@@ -10,14 +10,17 @@ include /usr/share/openstack-pkg-tools/pkgos.make
 	dh $@ --buildsystem=python_distutils --with python2,python3
 
 override_dh_auto_install:
-	set -e && for pyvers in $(PYTHONS); do \
+	set -e ; for pyvers in $(PYTHONS); do \
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python-jsonpath-rw; \
 	done
-	set -e && for pyvers in $(PYTHON3S); do \
+	set -e ; for pyvers in $(PYTHON3S); do \
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-jsonpath-rw; \
 	done
+	mv $(CURDIR)/debian/python-jsonpath-rw/usr/bin/jsonpath.py $(CURDIR)/debian/python-jsonpath-rw/usr/bin/python2-jsonpath
+	mv $(CURDIR)/debian/python3-jsonpath-rw/usr/bin/jsonpath.py $(CURDIR)/debian/python3-jsonpath-rw/usr/bin/python3-jsonpath
+	rm -f $(CURDIR)/debian/python*/usr/lib/python*/dist-pacakges/*.pth
 
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 override_dh_auto_test:
