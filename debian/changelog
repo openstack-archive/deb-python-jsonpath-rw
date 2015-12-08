@@ -1,3 +1,9 @@
+python-jsonpath-rw (1.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 08 Dec 2015 11:13:01 +0000
+
 python-jsonpath-rw (1.2.0-1) unstable; urgency=low
 
   * Initial release. (Closes: #722053)
