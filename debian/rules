@@ -3,7 +3,7 @@
 PYTHONS:=$(shell pyversions -vr)
 PYTHON3S:=$(shell py3versions -vr)
 
-UPSTREAM_GIT = git://github.com/kennknowles/python-jsonpath-rw.git
+UPSTREAM_GIT := https://github.com/kennknowles/python-jsonpath-rw.git
 include /usr/share/openstack-pkg-tools/pkgos.make
 
 %:
