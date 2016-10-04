@@ -1,4 +1,4 @@
-python-jsonpath-rw (1.4.0-2) UNRELEASED; urgency=medium
+python-jsonpath-rw (1.4.0-2) unstable; urgency=medium
 
   * Fixed VCS URLs (https).
   * d/rules: Changed UPSTREAM_GIT protocol to https
